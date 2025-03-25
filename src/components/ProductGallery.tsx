@@ -7,36 +7,36 @@ const products = [
     id: 'turmeric',
     name: 'Turmeric Powder',
     image: 'https://images.unsplash.com/photo-1615485500704-8e990c307cc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    shortDescription: 'High curcumin content, organically grown turmeric from tribal forests.',
-    origin: 'Western Ghats'
+    shortDescription: 'Premium turmeric with 3-5% curcumin content, FSSAI certified, sourced from Andhra Pradesh.',
+    origin: 'Andhra Pradesh'
   },
   {
     id: 'pepper',
     name: 'Black Pepper',
     image: 'https://images.unsplash.com/photo-1599678542742-0ad7ff68f7c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    shortDescription: 'Premium quality black pepper with rich aroma and distinctive flavor.',
-    origin: 'Kerala'
+    shortDescription: 'High-quality pepper with ≥6% piperine content, FSSAI and HACCP certified.',
+    origin: 'Andhra Pradesh'
   },
   {
     id: 'honey',
     name: 'Wild Honey',
     image: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    shortDescription: 'Pure, unprocessed wild honey harvested using sustainable methods.',
-    origin: 'Eastern Himalayas'
+    shortDescription: '100% pure and natural wild forest honey, harvested using traditional methods by tribal communities.',
+    origin: 'Andhra Pradesh'
   },
   {
     id: 'coffee',
     name: 'Coffee Beans',
     image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    shortDescription: 'Shade-grown coffee beans with rich flavor and ethical sourcing.',
-    origin: 'Coorg'
+    shortDescription: 'Premium-quality coffee beans handpicked directly from tribal farmers in lush forest regions.',
+    origin: 'Andhra Pradesh'
   },
   {
     id: 'annatto',
     name: 'Annatto Seeds',
     image: 'https://images.unsplash.com/photo-1558024362-8c02af9d3348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    shortDescription: 'Natural food coloring and flavoring from sustainably harvested annatto seeds.',
-    origin: 'Northeast India'
+    shortDescription: '100% pure and natural annatto seeds, ethically sourced from tribal communities for natural coloring.',
+    origin: 'Andhra Pradesh'
   }
 ];
 

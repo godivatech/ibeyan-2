@@ -51,7 +51,7 @@ const Hero = () => {
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-8'
             }`}
           >
-            Healthy, culturally-rich food accessible to all. We empower farmers and tribal communities while delivering premium quality products to global markets.
+            Making healthy, nutritious food accessible to all. We empower farmers and tribal communities while delivering premium quality products to global markets.
           </p>
           
           <div 

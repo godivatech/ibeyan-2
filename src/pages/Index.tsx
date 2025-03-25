@@ -52,11 +52,11 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center reveal">
             <span className="text-sm font-medium uppercase tracking-wider text-purple-200 mb-3 block">Our Mission</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Healthy, Culturally-Rich Food Accessible to All</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Make an Healthy Society</h2>
             <p className="text-lg md:text-xl text-purple-100 mb-10 max-w-3xl mx-auto">
-              We are committed to bringing the best of local agriculture to global markets 
-              while empowering farmers and tribal communities. Our focus on nutrition-driven 
-              processing ensures that you get products that are both healthy and authentic.
+              Our mission at BZHO NEXUSHUB is to make nutritious, balanced meals accessible to all, 
+              eradicating food insecurity and promoting health equity. We offer ready-to-eat and 
+              ready-to-cook solutions that save time while retaining nutrients and authentic flavors.
             </p>
             <Link 
               to="/about" 
@@ -76,9 +76,9 @@ const Index = () => {
               <span className="text-sm font-medium uppercase tracking-wider text-purple-600 mb-3 block">Making A Difference</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Impact</h2>
               <p className="text-gray-600 mb-8">
-                Through our partnerships with local farmers and tribal communities, we're creating 
-                sustainable livelihoods while preserving traditional agricultural practices and 
-                knowledge. Every purchase makes a difference in the lives of our partner communities.
+                Through our partnerships with UET (Unique Educational Trust) and FAPC (Fortified Agro 
+                Producers Confederation), we're creating sustainable livelihoods while preserving 
+                traditional agricultural practices and knowledge across 8 states in India.
               </p>
               
               <div className="grid grid-cols-3 gap-4 mb-8">
@@ -131,8 +131,8 @@ const Index = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-8 md:p-12 text-center max-w-4xl mx-auto reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Premium Quality?</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Whether you're looking for bulk orders or want to learn more about our products, 
-              we're here to help you bring the finest agricultural products to your business.
+              Whether you're looking for bulk orders or want to learn more about our ready-to-eat and ready-to-cook 
+              products, we're here to help you bring the finest agricultural products to your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

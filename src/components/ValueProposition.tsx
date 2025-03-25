@@ -15,8 +15,8 @@ const values = [
   },
   {
     icon: <Sparkles className="w-8 h-8 text-purple-600" />,
-    title: 'Export-Ready Packaging',
-    description: 'Premium packaging designed to preserve quality during international shipping and extend shelf life.'
+    title: '100% Natural Products',
+    description: 'No additives, preservatives, or artificial colors. Pure, natural products sourced directly from farmers.'
   }
 ];
 
