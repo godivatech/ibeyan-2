@@ -45,8 +45,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
-            <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-purple-600' : 'text-white'} group-hover:text-purple-400`}>BZHO</span>
-            <span className={`text-xl font-semibold transition-colors ${scrolled ? 'text-gray-800' : 'text-white'} group-hover:text-gray-200`}>NEXUSHUB</span>
+            <span className="text-xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">BZHO</span>
+            <span className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">NEXUSHUB</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,12 +56,12 @@ const Navbar = () => {
                 key={link.name}
                 to={link.href}
                 className={`font-medium text-sm transition-all duration-300 relative 
-                  after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-purple-400 
+                  after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-purple-600 
                   after:transition-all after:duration-300 after:origin-left
                   ${
                     location.pathname === link.href
-                      ? scrolled ? 'text-purple-600 after:w-full' : 'text-white after:w-full'
-                      : scrolled ? 'text-gray-700 hover:text-purple-600 after:w-0 hover:after:w-full' : 'text-white/90 hover:text-white after:w-0 hover:after:w-full'
+                      ? 'text-purple-600 after:w-full'
+                      : 'text-gray-700 hover:text-purple-600 after:w-0 hover:after:w-full'
                   }`}
               >
                 {link.name}
@@ -69,10 +69,10 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className={`${scrolled ? 'bg-purple-600 text-white' : 'bg-white/20 text-white backdrop-blur-sm'} px-4 py-2 rounded-md text-sm font-medium 
+              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium 
                          hover:bg-purple-700 transition-all duration-300 
                          hover:shadow-md hover:shadow-purple-500/30 
-                         active:scale-95 border border-transparent ${!scrolled && 'hover:border-white/50'}`}
+                         active:scale-95"
             >
               Get in Touch
             </Link>
@@ -85,9 +85,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-400 transition-colors`} />
+              <X className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
             ) : (
-              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-400 transition-colors`} />
+              <Menu className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
             )}
           </button>
         </div>
