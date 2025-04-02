@@ -60,8 +60,8 @@ const Navbar = () => {
                   after:transition-all after:duration-300 after:origin-left
                   ${
                     location.pathname === link.href
-                      ? 'text-purple-600 after:w-full'
-                      : 'text-gray-700 hover:text-purple-600 after:w-0 hover:after:w-full'
+                      ? `${scrolled ? 'text-purple-600' : 'text-white'} after:w-full`
+                      : `${scrolled ? 'text-gray-700' : 'text-white'} hover:${scrolled ? 'text-purple-600' : 'text-white/80'} after:w-0 hover:after:w-full`
                   }`}
               >
                 {link.name}
@@ -69,10 +69,13 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium 
-                         hover:bg-purple-700 transition-all duration-300 
+              className={`px-4 py-2 rounded-md text-sm font-medium 
+                         transition-all duration-300 
                          hover:shadow-md hover:shadow-purple-500/30 
-                         active:scale-95"
+                         active:scale-95
+                         ${scrolled ? 
+                           'bg-purple-600 text-white hover:bg-purple-700' : 
+                           'bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20'}`}
             >
               Get in Touch
             </Link>
@@ -85,9 +88,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
+              <X className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-600 transition-colors`} />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
+              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-600 transition-colors`} />
             )}
           </button>
         </div>
