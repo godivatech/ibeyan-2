@@ -38,15 +38,15 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm py-2' 
+          ? 'bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-md py-3' 
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-purple-600">BZHO</span>
-            <span className="text-xl font-semibold text-gray-800">NEXUSHUB</span>
+          <Link to="/" className="flex items-center space-x-2 group">
+            <span className="text-xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">BZHO</span>
+            <span className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">NEXUSHUB</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,18 +55,24 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`font-medium text-sm transition-all duration-300 animated-underline ${
-                  location.pathname === link.href
-                    ? 'text-purple-600'
-                    : 'text-gray-700 hover:text-purple-600'
-                }`}
+                className={`font-medium text-sm transition-all duration-300 relative 
+                  after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-purple-600 
+                  after:transition-all after:duration-300 after:origin-left
+                  ${
+                    location.pathname === link.href
+                      ? 'text-purple-600 after:w-full'
+                      : 'text-gray-700 hover:text-purple-600 after:w-0 hover:after:w-full'
+                  }`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition-all duration-300"
+              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium 
+                         hover:bg-purple-700 transition-all duration-300 
+                         hover:shadow-md hover:shadow-purple-500/30 
+                         active:scale-95"
             >
               Get in Touch
             </Link>
@@ -75,13 +81,13 @@ const Navbar = () => {
           {/* Mobile Navigation Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden focus:outline-none"
+            className="md:hidden focus:outline-none group"
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors" />
             )}
           </button>
         </div>
@@ -105,7 +111,8 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="bg-purple-600 text-white px-4 py-2 rounded-md text-center font-medium hover:bg-purple-700 transition-colors duration-300"
+                className="bg-purple-600 text-white px-4 py-2 rounded-md text-center font-medium 
+                           hover:bg-purple-700 transition-colors duration-300"
               >
                 Get in Touch
               </Link>
