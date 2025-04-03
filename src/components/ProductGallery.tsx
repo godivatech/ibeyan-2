@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import ProductCard from "./ProductCard";
 
@@ -7,7 +8,7 @@ const products = [
     name: "Turmeric Powder",
     image: "/assets/images/turmeric-1.jfif",
     shortDescription:
-      "Premium turmeric with 3-5% curcumin content, FSSAI certified, sourced from Andhra Pradesh.",
+      "Premium turmeric with 3-5% curcumin content, FSSAI certified, 100% natural with no additives or preservatives.",
     origin: "Andhra Pradesh",
   },
   {
@@ -15,7 +16,7 @@ const products = [
     name: "Black Pepper",
     image: "/assets/images/black-pepper1.png",
     shortDescription:
-      "High-quality pepper with ≥6% piperine content, FSSAI and HACCP certified.",
+      "High-quality pepper with ≥6% piperine content, FSSAI and HACCP certified, available in 4mm, 5mm, and bold sizes.",
     origin: "Andhra Pradesh",
   },
   {
@@ -24,7 +25,7 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     shortDescription:
-      "100% pure and natural wild forest honey, harvested using traditional methods by tribal communities.",
+      "100% pure and natural wild forest honey with golden to dark amber color, harvested using traditional methods by tribal communities.",
     origin: "Andhra Pradesh",
   },
   {
@@ -33,7 +34,7 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     shortDescription:
-      "Premium-quality coffee beans handpicked directly from tribal farmers in lush forest regions.",
+      "Premium-quality Arabica and Robusta coffee beans, sustainably grown and handpicked directly from tribal farmers in lush forest regions.",
     origin: "Andhra Pradesh",
   },
   {
@@ -41,7 +42,7 @@ const products = [
     name: "Annatto Seeds",
     image: "/assets/images/annetoseeds-1.jfif",
     shortDescription:
-      "100% pure and natural annatto seeds, ethically sourced from tribal communities for natural coloring.",
+      "100% pure and natural annatto seeds with vibrant reddish-brown color, ethically sourced from tribal communities for natural coloring.",
     origin: "Andhra Pradesh",
   },
 ];
@@ -86,7 +87,8 @@ const ProductGallery = () => {
           </h2>
           <p className="text-gray-600">
             Explore our range of high-quality agricultural products sourced
-            directly from farmers and tribal communities across India.
+            directly from farmers and tribal communities across India. All our products are
+            100% natural with no additives, preservatives, or artificial colors.
           </p>
         </div>
 
