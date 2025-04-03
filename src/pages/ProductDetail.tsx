@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
@@ -239,6 +240,192 @@ const productData = {
       },
     ],
   },
+=======
+
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, Package, Award, MapPin, Leaf, Download, ShoppingCart } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
+// Product data (normally would come from API or CMS)
+const productData = {
+  'turmeric': {
+    name: 'Turmeric Powder',
+    image: 'https://images.unsplash.com/photo-1615485500704-8e990c307cc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    description: 'Our premium organic turmeric powder is ethically sourced from tribal farmers in the Western Ghats. Known for its high curcumin content and vibrant color, this turmeric powder adds authentic flavor and health benefits to your dishes.',
+    origin: 'Western Ghats, India',
+    specs: [
+      { name: 'Curcumin Content', value: '5-7%' },
+      { name: 'Process', value: 'Cold-ground' },
+      { name: 'Certifications', value: 'FSSAI, Organic' },
+      { name: 'Available Quantities', value: '1kg, 5kg, 25kg' },
+      { name: 'Shelf Life', value: '24 months' },
+    ],
+    process: [
+      { 
+        title: 'Harvesting', 
+        description: 'Hand-harvested by tribal farmers using traditional techniques that preserve the quality of the rhizomes.',
+        image: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Processing', 
+        description: 'Carefully washed, boiled, and sun-dried before being ground into fine powder using cold-grinding technology.',
+        image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Quality Testing', 
+        description: 'Each batch undergoes rigorous testing for curcumin content, purity, and compliance with international standards.',
+        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Packaging', 
+        description: 'Packed in export-grade, airtight packaging that preserves freshness and extends shelf life.',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  },
+  'pepper': {
+    name: 'Black Pepper',
+    image: 'https://images.unsplash.com/photo-1599678542742-0ad7ff68f7c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    description: 'Our premium black pepper is sourced directly from small-scale farmers in Kerala. Known for its bold aroma and distinctive flavor, this pepper adds depth and character to any dish or product formulation.',
+    origin: 'Kerala, India',
+    specs: [
+      { name: 'Piperine Content', value: '5-6%' },
+      { name: 'Process', value: 'Sun-dried' },
+      { name: 'Certifications', value: 'FSSAI, Export Quality' },
+      { name: 'Available Quantities', value: '1kg, 5kg, 25kg' },
+      { name: 'Shelf Life', value: '36 months' },
+    ],
+    process: [
+      { 
+        title: 'Harvesting', 
+        description: 'Carefully harvested at peak ripeness to ensure maximum flavor and quality.',
+        image: 'https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Processing', 
+        description: 'Traditional sun-drying process to preserve natural oils and flavor compounds.',
+        image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Quality Testing', 
+        description: 'Rigorous testing for piperine content, moisture levels, and microbial analysis.',
+        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Packaging', 
+        description: 'Vacuum-sealed packaging to maintain freshness and aromatic properties.',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  },
+  'honey': {
+    name: 'Wild Honey',
+    image: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    description: 'Our wild honey is ethically harvested from the pristine forests of the Eastern Himalayas. Collected by tribal communities using sustainable methods, this honey offers a unique flavor profile with natural health benefits.',
+    origin: 'Eastern Himalayas, India',
+    specs: [
+      { name: 'Purity', value: '100% Pure' },
+      { name: 'Process', value: 'Cold-extracted' },
+      { name: 'Certifications', value: 'FSSAI, Natural' },
+      { name: 'Available Quantities', value: '250g, 500g, 1kg, 5kg' },
+      { name: 'Shelf Life', value: '24 months' },
+    ],
+    process: [
+      { 
+        title: 'Harvesting', 
+        description: 'Ethically harvested by tribal communities using traditional techniques that protect the bees and their habitat.',
+        image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Processing', 
+        description: 'Cold-extracted to preserve natural enzymes, antioxidants, and flavor compounds.',
+        image: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Quality Testing', 
+        description: 'Each batch tested for purity, moisture content, and HMF levels to ensure premium quality.',
+        image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Packaging', 
+        description: 'Packed in glass jars to maintain purity and prevent contamination.',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  },
+  'coffee': {
+    name: 'Coffee Beans',
+    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    description: 'Our premium shade-grown coffee beans are sourced from small farms in Coorg. These beans offer a rich, balanced flavor profile with notes of chocolate, caramel, and mild fruit undertones.',
+    origin: 'Coorg, Karnataka, India',
+    specs: [
+      { name: 'Variety', value: 'Arabica' },
+      { name: 'Process', value: 'Washed' },
+      { name: 'Certifications', value: 'FSSAI, Shade-Grown' },
+      { name: 'Available Quantities', value: '250g, 1kg, 5kg' },
+      { name: 'Shelf Life', value: '12 months (whole bean)' },
+    ],
+    process: [
+      { 
+        title: 'Harvesting', 
+        description: 'Hand-picked at peak ripeness to ensure optimal flavor development.',
+        image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Processing', 
+        description: 'Carefully washed and sun-dried to develop complex flavor profiles.',
+        image: 'https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Sorting', 
+        description: 'Meticulously sorted to remove defects and ensure consistent quality.',
+        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Packaging', 
+        description: 'Vacuum-sealed with one-way valves to preserve freshness and aroma.',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  },
+  'annatto': {
+    name: 'Annatto Seeds',
+    image: 'https://images.unsplash.com/photo-1558024362-8c02af9d3348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    description: 'Our annatto seeds are sourced from tribal communities in Northeast India. These vibrant red seeds provide natural coloring and a subtle earthy flavor, perfect for food products and traditional recipes.',
+    origin: 'Northeast India',
+    specs: [
+      { name: 'Bixin Content', value: '4-5%' },
+      { name: 'Process', value: 'Sun-dried' },
+      { name: 'Certifications', value: 'FSSAI, Natural Colorant' },
+      { name: 'Available Quantities', value: '100g, 500g, 1kg, 5kg' },
+      { name: 'Shelf Life', value: '24 months' },
+    ],
+    process: [
+      { 
+        title: 'Harvesting', 
+        description: 'Carefully harvested by tribal communities using sustainable methods.',
+        image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Processing', 
+        description: 'Naturally sun-dried to preserve color compounds and flavor.',
+        image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Quality Testing', 
+        description: 'Tested for bixin content and color strength to ensure consistent quality.',
+        image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+      },
+      { 
+        title: 'Packaging', 
+        description: 'Packed in light-protective packaging to maintain color vibrancy.',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  }
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
 };
 
 const ProductDetail = () => {
@@ -250,11 +437,19 @@ const ProductDetail = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+<<<<<<< HEAD
 
     // Simulate loading product data
     if (productId && productData[productId as keyof typeof productData]) {
       setProduct(productData[productId as keyof typeof productData]);
 
+=======
+    
+    // Simulate loading product data
+    if (productId && productData[productId as keyof typeof productData]) {
+      setProduct(productData[productId as keyof typeof productData]);
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       // Trigger fade-in animation
       setTimeout(() => {
         setIsVisible(true);
@@ -265,12 +460,18 @@ const ProductDetail = () => {
   useEffect(() => {
     // Function to handle scroll animations
     const handleScrollAnimation = () => {
+<<<<<<< HEAD
       const reveals = document.querySelectorAll(".reveal");
 
+=======
+      const reveals = document.querySelectorAll('.reveal');
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       reveals.forEach((reveal) => {
         const windowHeight = window.innerHeight;
         const elementTop = reveal.getBoundingClientRect().top;
         const elementVisible = 150;
+<<<<<<< HEAD
 
         if (elementTop < windowHeight - elementVisible) {
           reveal.classList.add("active");
@@ -285,6 +486,22 @@ const ProductDetail = () => {
 
     // Clean up event listener
     return () => window.removeEventListener("scroll", handleScrollAnimation);
+=======
+        
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScrollAnimation);
+    // Trigger once on mount
+    handleScrollAnimation();
+    
+    // Clean up event listener
+    return () => window.removeEventListener('scroll', handleScrollAnimation);
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
   }, []);
 
   if (!product) {
@@ -293,9 +510,13 @@ const ProductDetail = () => {
         <Navbar />
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Product Not Found</h2>
+<<<<<<< HEAD
           <p className="text-gray-600 mb-8">
             The product you're looking for doesn't exist or has been removed.
           </p>
+=======
+          <p className="text-gray-600 mb-8">The product you're looking for doesn't exist or has been removed.</p>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           <Link
             to="/products"
             className="bg-purple-600 text-white px-6 py-3 rounded-md font-medium hover:bg-purple-700 transition-colors duration-300"
@@ -308,6 +529,7 @@ const ProductDetail = () => {
   }
 
   const nextImage = () => {
+<<<<<<< HEAD
     setCurrentImageIndex((prev) =>
       prev === product.process.length - 1 ? 0 : prev + 1
     );
@@ -317,12 +539,23 @@ const ProductDetail = () => {
     setCurrentImageIndex((prev) =>
       prev === 0 ? product.process.length - 1 : prev - 1
     );
+=======
+    setCurrentImageIndex((prev) => (prev === product.process.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? product.process.length - 1 : prev - 1));
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       {/* Product Intro */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-20">
         <div className="container mx-auto px-4 md:px-6">
@@ -332,10 +565,17 @@ const ProductDetail = () => {
           >
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Products
           </Link>
+<<<<<<< HEAD
 
           <div
             className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-opacity duration-700 ${
               isVisible ? "opacity-100" : "opacity-0"
+=======
+          
+          <div 
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-opacity duration-700 ${
+              isVisible ? 'opacity-100' : 'opacity-0'
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             }`}
           >
             {/* Product Image */}
@@ -346,7 +586,11 @@ const ProductDetail = () => {
                 className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             {/* Product Details */}
             <div>
               <div className="flex items-center mb-4">
@@ -357,6 +601,7 @@ const ProductDetail = () => {
                   <MapPin className="w-3.5 h-3.5 mr-1" /> {product.origin}
                 </span>
               </div>
+<<<<<<< HEAD
 
               <h1 className="text-3xl md:text-4xl font-bold mb-4">
                 {product.name}
@@ -370,6 +615,19 @@ const ProductDetail = () => {
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
                 <h3 className="text-lg font-bold mb-4 flex items-center">
                   <Award className="w-5 h-5 mr-2 text-purple-600" />
+=======
+              
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
+              
+              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                {product.description}
+              </p>
+              
+              {/* Product Specifications */}
+              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                <h3 className="text-lg font-bold mb-4 flex items-center">
+                  <Award className="w-5 h-5 mr-2 text-purple-600" /> 
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   Specifications
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -377,16 +635,24 @@ const ProductDetail = () => {
                     <div key={index} className="flex items-start">
                       <div className="w-3 h-3 rounded-full bg-purple-200 mt-1.5 mr-3 flex-shrink-0"></div>
                       <div>
+<<<<<<< HEAD
                         <span className="font-medium text-gray-700">
                           {spec.name}:
                         </span>
+=======
+                        <span className="font-medium text-gray-700">{spec.name}:</span>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                         <span className="ml-2 text-gray-600">{spec.value}</span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -395,7 +661,13 @@ const ProductDetail = () => {
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" /> Request Samples
                 </Link>
+<<<<<<< HEAD
                 <button className="bg-white border border-purple-600 text-purple-600 px-6 py-3 rounded-md font-medium hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
+=======
+                <button
+                  className="bg-white border border-purple-600 text-purple-600 px-6 py-3 rounded-md font-medium hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center"
+                >
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   <Download className="w-5 h-5 mr-2" /> Download Spec Sheet
                 </button>
               </div>
@@ -403,11 +675,16 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       {/* Process Journey */}
       <section className="py-16 bg-gray-50 reveal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
+<<<<<<< HEAD
             <span className="text-sm font-medium uppercase tracking-wider text-purple-600 mb-3 block">
               Our Process
             </span>
@@ -421,6 +698,16 @@ const ProductDetail = () => {
             </p>
           </div>
 
+=======
+            <span className="text-sm font-medium uppercase tracking-wider text-purple-600 mb-3 block">Our Process</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Journey from Farm to Package</h2>
+            <p className="text-gray-600">
+              Follow the journey of our {product.name.toLowerCase()} from sustainable harvesting 
+              to premium packaging, ensuring quality at every step.
+            </p>
+          </div>
+          
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           {/* Process Steps */}
           <div className="relative mb-16">
             {/* Process Steps Indicators */}
@@ -432,7 +719,11 @@ const ProductDetail = () => {
                   <div className="hidden md:flex absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-purple-600 text-white items-center justify-center font-bold z-20">
                     {index + 1}
                   </div>
+<<<<<<< HEAD
 
+=======
+                  
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   {/* Step Content */}
                   <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 md:mt-8 h-full">
                     <div className="md:hidden flex items-center mb-4">
@@ -441,18 +732,27 @@ const ProductDetail = () => {
                       </div>
                       <h3 className="text-xl font-bold">{step.title}</h3>
                     </div>
+<<<<<<< HEAD
                     <h3 className="hidden md:block text-xl font-bold mb-3 text-center">
                       {step.title}
                     </h3>
                     <p className="text-gray-600 md:text-center">
                       {step.description}
                     </p>
+=======
+                    <h3 className="hidden md:block text-xl font-bold mb-3 text-center">{step.title}</h3>
+                    <p className="text-gray-600 md:text-center">{step.description}</p>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   </div>
                 </div>
               ))}
             </div>
           </div>
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           {/* Process Gallery */}
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-lg overflow-hidden shadow-lg h-96">
@@ -462,6 +762,7 @@ const ProductDetail = () => {
                 alt={product.process[currentImageIndex].title}
                 className="w-full h-full object-cover transition-opacity duration-500"
               />
+<<<<<<< HEAD
 
               {/* Caption */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
@@ -475,6 +776,17 @@ const ProductDetail = () => {
                 </div>
               </div>
 
+=======
+              
+              {/* Caption */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                <div className="max-w-3xl mx-auto">
+                  <h3 className="text-xl font-bold mb-2">{product.process[currentImageIndex].title}</h3>
+                  <p className="text-white/90">{product.process[currentImageIndex].description}</p>
+                </div>
+              </div>
+              
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
               {/* Navigation Arrows */}
               <button
                 onClick={prevImage}
@@ -488,7 +800,11 @@ const ProductDetail = () => {
               >
                 <ArrowRight className="w-5 h-5" />
               </button>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
               {/* Progress Dots */}
               <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
                 {product.process.map((_: any, index: number) => (
@@ -496,7 +812,11 @@ const ProductDetail = () => {
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+<<<<<<< HEAD
                       currentImageIndex === index ? "bg-white" : "bg-white/40"
+=======
+                      currentImageIndex === index ? 'bg-white' : 'bg-white/40'
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                     }`}
                   />
                 ))}
@@ -505,7 +825,11 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       {/* Certifications */}
       <section className="py-16 bg-white reveal">
         <div className="container mx-auto px-4 md:px-6">
@@ -513,6 +837,7 @@ const ProductDetail = () => {
             <span className="text-sm font-medium uppercase tracking-wider text-purple-600 mb-3 block">
               Quality Assurance
             </span>
+<<<<<<< HEAD
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Certifications
             </h2>
@@ -522,30 +847,48 @@ const ProductDetail = () => {
             </p>
           </div>
 
+=======
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Certifications</h2>
+            <p className="text-gray-600">
+              We adhere to the highest quality standards and certifications to ensure our products 
+              meet international requirements.
+            </p>
+          </div>
+          
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="font-bold mb-2">FSSAI Certified</h3>
+<<<<<<< HEAD
               <p className="text-gray-600 text-sm">
                 Meeting India's food safety standards
               </p>
+=======
+              <p className="text-gray-600 text-sm">Meeting India's food safety standards</p>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             </div>
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Leaf className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="font-bold mb-2">Organic</h3>
+<<<<<<< HEAD
               <p className="text-gray-600 text-sm">
                 Grown without synthetic chemicals
               </p>
+=======
+              <p className="text-gray-600 text-sm">Grown without synthetic chemicals</p>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             </div>
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Package className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="font-bold mb-2">Export Quality</h3>
+<<<<<<< HEAD
               <p className="text-gray-600 text-sm">
                 Meeting international standards
               </p>
@@ -571,11 +914,27 @@ const ProductDetail = () => {
               <p className="text-gray-600 text-sm">
                 Verified purity and quality
               </p>
+=======
+              <p className="text-gray-600 text-sm">Meeting international standards</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6 text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <h3 className="font-bold mb-2">Lab Tested</h3>
+              <p className="text-gray-600 text-sm">Verified purity and quality</p>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             </div>
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       {/* Related Products */}
       <section className="py-16 bg-gray-50 reveal">
         <div className="container mx-auto px-4 md:px-6">
@@ -585,7 +944,11 @@ const ProductDetail = () => {
               Explore more premium products from our collection
             </p>
           </div>
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {Object.entries(productData)
               .filter(([id]) => id !== productId)
@@ -618,17 +981,27 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       {/* CTA */}
       <section className="py-16 bg-white reveal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="bg-purple-600 text-white rounded-lg p-8 md:p-12 text-center max-w-4xl mx-auto">
+<<<<<<< HEAD
             <h2 className="text-3xl font-bold mb-4">
               Ready to Place an Order?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
               Contact us today to discuss your requirements, request samples, or
               place a bulk order.
+=======
+            <h2 className="text-3xl font-bold mb-4">Ready to Place an Order?</h2>
+            <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+              Contact us today to discuss your requirements, request samples, or place a bulk order.
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

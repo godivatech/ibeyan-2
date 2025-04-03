@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+=======
+
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +15,19 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
+<<<<<<< HEAD
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Impact", href: "/impact" },
     { name: "Contact", href: "/contact" },
+=======
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Products', href: '/products' },
+    { name: 'Impact', href: '/impact' },
+    { name: 'Contact', href: '/contact' },
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
   ];
 
   useEffect(() => {
@@ -24,8 +39,13 @@ const Navbar = () => {
       }
     };
 
+<<<<<<< HEAD
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+=======
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
   }, []);
 
   useEffect(() => {
@@ -34,22 +54,35 @@ const Navbar = () => {
   }, [location]);
 
   return (
+<<<<<<< HEAD
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled
           ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-md py-3"
           : "bg-transparent py-4"
+=======
+    <nav 
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
+        scrolled 
+          ? 'bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-md py-3' 
+          : 'bg-transparent py-4'
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
+<<<<<<< HEAD
             <span className="text-xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">
               BZHO
             </span>
             <span className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
               NEXUSHUB
             </span>
+=======
+            <span className="text-xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">BZHO</span>
+            <span className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">NEXUSHUB</span>
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,12 +96,17 @@ const Navbar = () => {
                   after:transition-all after:duration-300 after:origin-left
                   ${
                     location.pathname === link.href
+<<<<<<< HEAD
                       ? `${
                           scrolled ? "text-purple-600" : "text-white"
                         } after:w-full`
                       : `${scrolled ? "text-gray-700" : "text-white"} hover:${
                           scrolled ? "text-purple-600" : "text-white/80"
                         } after:w-0 hover:after:w-full`
+=======
+                      ? `${scrolled ? 'text-purple-600' : 'text-white'} after:w-full`
+                      : `${scrolled ? 'text-gray-700' : 'text-white'} hover:${scrolled ? 'text-purple-600' : 'text-white/80'} after:w-0 hover:after:w-full`
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   }`}
               >
                 {link.name}
@@ -80,11 +118,17 @@ const Navbar = () => {
                          transition-all duration-300 
                          hover:shadow-md hover:shadow-purple-500/30 
                          active:scale-95
+<<<<<<< HEAD
                          ${
                            scrolled
                              ? "bg-purple-600 text-white hover:bg-purple-700"
                              : "bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20"
                          }`}
+=======
+                         ${scrolled ? 
+                           'bg-purple-600 text-white hover:bg-purple-700' : 
+                           'bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20'}`}
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             >
               Get in Touch
             </Link>
@@ -97,6 +141,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
+<<<<<<< HEAD
               <X
                 className={`w-6 h-6 ${
                   scrolled ? "text-gray-700" : "text-white"
@@ -108,6 +153,11 @@ const Navbar = () => {
                   scrolled ? "text-gray-700" : "text-white"
                 } group-hover:text-purple-600 transition-colors`}
               />
+=======
+              <X className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-600 transition-colors`} />
+            ) : (
+              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'} group-hover:text-purple-600 transition-colors`} />
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
             )}
           </button>
         </div>
@@ -122,8 +172,13 @@ const Navbar = () => {
                   to={link.href}
                   className={`font-medium transition-colors duration-300 ${
                     location.pathname === link.href
+<<<<<<< HEAD
                       ? "text-purple-600"
                       : "text-gray-700 hover:text-purple-600"
+=======
+                      ? 'text-purple-600'
+                      : 'text-gray-700 hover:text-purple-600'
+>>>>>>> 7939be91f8e84922f253666b016c51d5757710cb
                   }`}
                 >
                   {link.name}
